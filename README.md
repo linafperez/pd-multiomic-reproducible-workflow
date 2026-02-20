@@ -19,5 +19,13 @@ Parkinson’s disease (PD) is increasingly hypothesized to originate in the gut,
 ## Study Design
 ## Repository Structure
 ## Workflow Description
-### 3.1. Mendelian Randomization (MR)
-### 3.2. Shotgun Metagenomics
+### Mendelian Randomization (MR)
+### Shotgun Metagenomics
+### Metatranscriptomics
+### 16S rRNA Gene Analysis
+### Metabolomics
+### Multi-omic Integration
+## Software and Dependencies
+## Data Availability
+## Reproducibility Notes
+## Citation
