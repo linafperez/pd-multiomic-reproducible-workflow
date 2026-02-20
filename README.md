@@ -17,6 +17,7 @@ Parkinson’s disease (PD) is increasingly hypothesized to originate in the gut,
 7. [Citation](#citation)
 
 ## Study Design
+
 ## Repository Structure
 ## Workflow Description
 ### Mendelian Randomization (MR)
