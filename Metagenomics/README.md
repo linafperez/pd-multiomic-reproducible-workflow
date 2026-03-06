@@ -1,7 +1,4 @@
 # Shotgun Metagenomics Analysis
-
-## Overview
-
 This directory contains the workflow used to process shotgun metagenomic sequencing datasets and reconstruct genome-resolved microbiomes from Parkinson’s disease cohorts. The pipeline reproduces the computational procedures used in the study to assemble metagenomes, recover metagenome-assembled genomes (MAGs), perform taxonomic classification, and annotate microbial functions.
 
 The workflow converts raw shotgun sequencing reads into high-quality microbial genomes through assembly, binning, and genome refinement. The resulting genomes are used to characterize microbial community structure at strain resolution and identify functional pathways associated with Parkinson’s disease.
