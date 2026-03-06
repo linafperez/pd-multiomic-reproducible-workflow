@@ -1,8 +1,6 @@
 # 16S rRNA Gene Analysis Pipeline
 
-## Overview
-
-This repository contains the workflow used to process 16S rRNA gene sequencing datasets from the European and Latin American Parkinson’s disease cohorts. The pipeline reproduces the computational procedures used to generate Amplicon Sequence Variant (ASV) tables and taxonomic profiles used in the study.
+This directory contains the workflow used to process 16S rRNA gene sequencing datasets from the European and Latin American Parkinson’s disease cohorts. The pipeline reproduces the computational procedures used to generate Amplicon Sequence Variant (ASV) tables and taxonomic profiles used in the study.
 
 The workflow converts raw amplicon sequencing reads into high-resolution ASVs, performs taxonomic classification, and generates microbial community composition profiles.
 
