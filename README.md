@@ -51,6 +51,226 @@ To capture the functional activity of these genomes, metatranscriptomic data wer
 Finally, a cross-platform harmonization strategy was implemented to link MAG-derived taxa with ASV-level features and integrate these microbial signals with metabolite profiles. This multi-layer integration enabled the reconstruction of functional relationships connecting microbial genomes, encoded genes, metabolic pathways, and host metabolites, ultimately providing a systems-level view of microbiome–host interactions associated with Parkinson’s disease.
 
 ## Repository Structure
+## Repository Structure
+
+The repository is organized according to the different omic layers analyzed in this study and the final multi-omic integration steps. Each top-level directory corresponds to a specific analytical component of the workflow, and contains the scripts required to reproduce the analyses described in the manuscript.
+
+The full directory structure of the repository is shown below.
+
+```text
+.
+├── 16S_Metagenomics
+│   ├── Classifier-training
+│   │   ├── Curate
+│   │   │   └── qiime_curate.sh
+│   │   └── Download
+│   │       └── qiime_download.sh
+│   ├── EUR
+│   │   ├── Denoising
+│   │   │   ├── Cutadapt
+│   │   │   │   └── qiime_cutadapt.sh
+│   │   │   ├── DADA
+│   │   │   │   └── qiime_denoise.sh
+│   │   │   └── Summarize
+│   │   │       └── qiime_summarize.sh
+│   │   ├── Import
+│   │   │   ├── Demux
+│   │   │   │   └── qiime_demux.sh
+│   │   │   └── qiime_import.sh
+│   │   ├── Raw_data
+│   │   │   └── sra_tools.sh
+│   │   └── Taxonomy
+│   │       ├── Classification
+│   │       │   └── qiime_classification.sh
+│   │       ├── Extract
+│   │       │   └── qiime_extract.sh
+│   │       ├── Filtering
+│   │       │   └── qiime_filtering.sh
+│   │       └── Train
+│   │           └── qiime_train.sh
+│   └── LATAM
+│       ├── Denoising
+│       │   ├── Cutadapt
+│       │   │   └── qiime_cutadapt.sh
+│       │   ├── DADA
+│       │   │   └── qiime_denoise.sh
+│       │   └── Summarize
+│       │       └── qiime_summarize.sh
+│       ├── Import
+│       │   ├── Demux
+│       │   │   └── qiime_demux.sh
+│       │   └── qiime_import.sh
+│       ├── Raw_data
+│       │   └── sra-tools.sh
+│       └── Taxonomy
+│           ├── Classification
+│           │   └── qiime_classification.sh
+│           ├── Extract
+│           │   └── qiime_extract.sh
+│           ├── Filtering
+│           │   └── qiime_filtering.sh
+│           └── Train
+│               └── qiime_train.sh
+├── Integration
+│   ├── MAG-ASV
+│   │   └── MAG_ASV-integration.Rmd
+│   └── MAG-genes-metabolite
+│       └── Microbe-gene-metabolite.Rmd
+├── MR
+│   ├── Exposure
+│   │   └── SNPs_exposure.R
+│   ├── MR
+│   │   └── MR.Rmd
+│   └── Outcome
+│       └── SNP_outcome.R
+├── Metabolomics
+│   └── Metabolomics_analysis.Rmd
+├── Metagenomics
+│   ├── Assembly
+│   │   ├── MEGAHIT
+│   │   │   ├── MEGAHIT.sh
+│   │   │   └── MetaQuast
+│   │   │       └── metaquast.sh
+│   │   └── metaSPAdes
+│   │       ├── MetaQuast
+│   │       │   └── metaquast.sh
+│   │       └── metaspades.sh
+│   ├── Binning
+│   │   ├── MEGAHIT
+│   │   │   ├── Binner
+│   │   │   │   ├── COMEBin
+│   │   │   │   │   └── comebin.sh
+│   │   │   │   ├── MetaBAT2
+│   │   │   │   │   └── metabat2.sh
+│   │   │   │   ├── SemiBin2
+│   │   │   │   │   └── semibin2.sh
+│   │   │   │   └── Vamb
+│   │   │   │       └── vamb.sh
+│   │   │   ├── CoverM
+│   │   │   │   ├── coverm.sh
+│   │   │   │   └── fix-vamb.py
+│   │   │   └── Refinement
+│   │   │       ├── DAS_Tool
+│   │   │       │   └── das_tool.sh
+│   │   │       └── Quality_control
+│   │   │           ├── Clean_bin
+│   │   │           │   ├── CheckM2
+│   │   │           │   │   └── checkm2.sh
+│   │   │           │   └── GUNC
+│   │   │           │       └── gunc.sh
+│   │   │           ├── Dereplication_filtering
+│   │   │           │   └── dRep
+│   │   │           │       └── drep.sh
+│   │   │           └── Raw_bin
+│   │   │               ├── CheckM2
+│   │   │               │   └── checkm2.sh
+│   │   │               └── GUNC
+│   │   │                   └── gunc.sh
+│   │   └── metaSPAdes
+│   │       ├── Binner
+│   │       │   ├── COMEBin
+│   │       │   │   └── comebin.sh
+│   │       │   ├── MetaBAT2
+│   │       │   │   └── metabat2.sh
+│   │       │   ├── SemiBin2
+│   │       │   │   └── semibin2.sh
+│   │       │   └── Vamb
+│   │       │       └── vamb.sh
+│   │       ├── CoverM
+│   │       │   ├── coverm.sh
+│   │       │   └── fix-vamb.py
+│   │       └── Refinement
+│   │           ├── DAS_Tool
+│   │           │   └── das_tool.sh
+│   │           └── Quality_control
+│   │               ├── Clean_bin
+│   │               │   ├── CheckM2
+│   │               │   │   └── checkm2.sh
+│   │               │   └── GUNC
+│   │               │       └── gunc.sh
+│   │               ├── Dereplication_filtering
+│   │               │   └── dRep
+│   │               │       └── drep.sh
+│   │               └── Raw_bin
+│   │                   ├── CheckM2
+│   │                   │   └── checkm2.sh
+│   │                   └── GUNC
+│   │                       └── gunc.sh
+│   ├── Features_MAGs
+│   │   └── CoverM
+│   │       └── coverm.sh
+│   ├── Functional_annotation
+│   │   ├── MAG_eggnog
+│   │   │   └── merged_annotations.sh
+│   │   └── eggmapper.sh
+│   ├── Gene_prediction
+│   │   └── GeneMarkS2
+│   │       └── genemarks2.sh
+│   ├── Host_removal
+│   │   └── bowtie2.sh
+│   ├── QC_MAGs
+│   │   └── Final_MAGs
+│   │       ├── CheckM2
+│   │       │   └── checkm2.sh
+│   │       ├── GUNC
+│   │       │   └── gunc.sh
+│   │       └── dRep
+│   │           └── drep.sh
+│   ├── Quality_control
+│   │   ├── FastP
+│   │   │   └── fastp.sh
+│   │   ├── FastQC_clean
+│   │   │   └── fastqc_clean.sh
+│   │   └── FastQC_raw
+│   │       └── fastqc_raw.sh
+│   ├── Raw_data
+│   │   └── sra-tools.sh
+│   └── Taxonomy
+│       ├── GTDB
+│       │   ├── DB
+│       │   └── taxonomy.sh
+│       └── Phylogenomics
+│           └── phylo.sh
+└── Metatranscriptomics
+    ├── Assembly
+    │   └── rnaSPAdes
+    │       ├── rnaQuast
+    │       │   └── rnaquast.sh
+    │       └── rnaspades.sh
+    ├── Expression
+    │   └── Meta-PD_DESeq2.Rmd
+    ├── Host_removal
+    │   └── STAR
+    │       ├── Data
+    │       │   └── symlinks.sh
+    │       └── STAR.sh
+    ├── Quality_control
+    │   ├── FastP
+    │   │   └── fastp.sh
+    │   ├── FastQC_clean
+    │   │   └── fastqc_clean.sh
+    │   └── FastQC_raw
+    │       └── fastqc_raw.sh
+    ├── Quantification
+    │   └── Salmon
+    │       ├── Counts
+    │       │   ├── import.sh
+    │       │   └── tximport_salmon.R
+    │       ├── Data
+    │       │   └── symlinks.sh
+    │       ├── MetaT
+    │       └── meta_salmon.sh
+    ├── Raw_data
+    │   └── sra-tools.sh
+    ├── Transcript_prediction
+    │   ├── Diamond
+    │   │   ├── DB
+    │   │   │   └── MAG-protein_copy.sh
+    │   │   └── magxtrans.sh
+    │   └── TransDecoder
+    │       └── transdecoder.sh
+    └── rRNA_removal
+        └── sortmerna.sh
 ## Workflow Description
 ### Mendelian Randomization (MR)
 ### Shotgun Metagenomics
