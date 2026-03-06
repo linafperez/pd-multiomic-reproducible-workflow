@@ -17,6 +17,44 @@ Parkinson’s disease (PD) is increasingly hypothesized to originate in the gut,
 7. [Citation](#citation)
 
 ## Study Design
+## Study Design
+
+This study performs a genome-resolved multi-omic meta-analysis to investigate the role of the gut microbiome in Parkinson’s disease (PD). The workflow integrates multiple omic layers to reconstruct microbial genomic structure, functional activity, and host metabolic interactions.
+
+The analysis combines datasets from independent cohorts in Europe and Latin America and integrates five complementary analytical layers:
+
+1. Mendelian Randomization (MR)
+2. Shotgun metagenomics
+3. Metatranscriptomics
+4. 16S rRNA gene sequencing
+5. Untargeted metabolomics
+
+All analyses were performed independently for each omic layer and subsequently integrated to identify strain-resolved microbial signatures associated with Parkinson’s disease.
+
+### Included cohorts
+
+The study includes publicly available datasets from three studies:
+
+| Study | Region | Omics | Samples |
+|------|------|------|------|
+| Villette et al. | Europe | Shotgun metagenomics + metatranscriptomics | 46 PD / 49 HC |
+| Pereira et al. | Europe | 16S rRNA sequencing + metabolomics | 63 PD / 61 HC |
+| Forero-Rodríguez et al. | Latin America | 16S rRNA sequencing | 25 PD / 25 HC |
+
+Microbiome data were derived from fecal samples, while metabolomic profiles were obtained from serum samples.
+
+### Study workflow
+
+The study follows a stepwise analytical strategy:
+
+1. **Data acquisition** from public repositories.
+2. **Independent processing of each omic layer** using standardized pipelines.
+3. **Genome reconstruction** from metagenomic data to obtain metagenome-assembled genomes (MAGs).
+4. **Functional characterization** using metatranscriptomics and metabolomics.
+5. **Cross-platform taxonomic harmonization** linking MAGs and ASVs.
+6. **Multi-omic integration** connecting microbial genomes, genes, pathways, and host metabolites.
+
+This design enables a systems-level reconstruction of microbiome–host interactions associated with Parkinson’s disease.
 
 ## Repository Structure
 ## Workflow Description
