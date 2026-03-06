@@ -1,4 +1,4 @@
-# Mendelian Randomization (MR) Analysis Pipeline
+# Mendelian Randomization (MR) Analysis
 This directoy contains the workflow used to perform Mendelian Randomization (MR) analyses investigating potential causal relationships between gut microbiome taxa and Parkinson’s disease (PD). The pipeline reproduces the analytical procedures used in the study to evaluate genetically instrumented microbial abundances and their association with PD risk.
 
 The workflow integrates microbiome genome-wide association study (GWAS) summary statistics with Parkinson’s disease GWAS datasets from independent cohorts. Instrumental variables are derived from microbiome-associated genetic variants and tested against PD GWAS summary statistics using multiple MR estimators to ensure robust causal inference.
