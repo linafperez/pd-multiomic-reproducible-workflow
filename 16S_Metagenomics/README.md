@@ -53,6 +53,7 @@ SILVA 138.2 SSURef NR99
 ---
 
 # Directory Structure
+```
 16S_Metagenomics
 │
 ├── Classifier-training
@@ -108,7 +109,7 @@ SILVA 138.2 SSURef NR99
 │ └── qiime_classification.sh
 └── Filtering
 └── qiime_filtering.sh
-
+```
 
 ---
 
