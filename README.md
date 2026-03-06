@@ -270,7 +270,7 @@ The full directory structure of the repository is shown below.
     │       └── transdecoder.sh
     └── rRNA_removal
         └── sortmerna.sh
-```text
+```
 
 ## Workflow Description
 
