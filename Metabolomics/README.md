@@ -1,4 +1,4 @@
-# Metabolomics Analysis Pipeline
+# Metabolomics Analysis
 This directory contains the workflow used to analyze untargeted metabolomic datasets associated with Parkinson’s disease cohorts. The pipeline reproduces the computational procedures used in the study to identify serum metabolites associated with Parkinson’s disease and prioritize metabolite signatures through statistical and machine learning approaches.
 
 The workflow processes metabolomic feature tables derived from mass spectrometry experiments and performs statistical testing, multivariate modeling, and metabolite prioritization. The resulting metabolite signatures are subsequently integrated with microbial genomic and transcriptional signals to investigate microbiome–host metabolic interactions.
