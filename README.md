@@ -270,6 +270,8 @@ The full directory structure of the repository is shown below.
     │       └── transdecoder.sh
     └── rRNA_removal
         └── sortmerna.sh
+
+
 ## Workflow Description
 
 The analytical framework implemented in this repository integrates multiple omic layers to characterize the relationship between the gut microbiome and Parkinson’s disease. Each omic dataset was processed using dedicated pipelines designed to ensure reproducibility and methodological consistency across cohorts. The workflow combines genome-resolved microbiome reconstruction, transcriptional profiling, metabolomic analysis, and causal inference approaches to obtain a systems-level view of microbiome–host interactions.
