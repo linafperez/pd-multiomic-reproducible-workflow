@@ -17,7 +17,6 @@ Parkinson’s disease (PD) is increasingly hypothesized to originate in the gut,
 7. [Citation](#citation)
 
 ## Study Design
-## Study Design
 
 This study performs a genome-resolved multi-omic meta-analysis to investigate the role of the gut microbiome in Parkinson’s disease (PD). The workflow integrates multiple omic layers to reconstruct microbial genomic structure, functional activity, and host metabolic interactions.
 
@@ -45,16 +44,11 @@ Microbiome data were derived from fecal samples, while metabolomic profiles were
 
 ### Study workflow
 
-The study follows a stepwise analytical strategy:
+The analytical workflow was designed to systematically reconstruct the functional landscape of the Parkinson’s disease gut microbiome through a multi-omic integration framework. First, raw sequencing and metabolomic datasets were retrieved from publicly available repositories corresponding to the selected cohorts. Each omic layer was then processed independently using standardized bioinformatic pipelines to ensure methodological consistency and reproducibility. Shotgun metagenomic data were used to reconstruct microbial genomes through the assembly and binning of metagenome-assembled genomes (MAGs), enabling genome-resolved characterization of the microbial community. 
 
-1. **Data acquisition** from public repositories.
-2. **Independent processing of each omic layer** using standardized pipelines.
-3. **Genome reconstruction** from metagenomic data to obtain metagenome-assembled genomes (MAGs).
-4. **Functional characterization** using metatranscriptomics and metabolomics.
-5. **Cross-platform taxonomic harmonization** linking MAGs and ASVs.
-6. **Multi-omic integration** connecting microbial genomes, genes, pathways, and host metabolites.
+To capture the functional activity of these genomes, metatranscriptomic data were analyzed to quantify gene expression profiles, while untargeted metabolomics provided a complementary view of the systemic metabolic phenotype associated with disease. In parallel, 16S rRNA gene sequencing datasets were processed to identify amplicon sequence variants (ASVs) and characterize community-level compositional patterns across cohorts. 
 
-This design enables a systems-level reconstruction of microbiome–host interactions associated with Parkinson’s disease.
+Finally, a cross-platform harmonization strategy was implemented to link MAG-derived taxa with ASV-level features and integrate these microbial signals with metabolite profiles. This multi-layer integration enabled the reconstruction of functional relationships connecting microbial genomes, encoded genes, metabolic pathways, and host metabolites, ultimately providing a systems-level view of microbiome–host interactions associated with Parkinson’s disease.
 
 ## Repository Structure
 ## Workflow Description
